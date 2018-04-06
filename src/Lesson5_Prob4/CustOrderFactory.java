@@ -16,8 +16,5 @@ public class CustOrderFactory {
 		return ord;
 	}
 	
-	public static void addItemToOrder(Order order, String item) {
-		
-		order.addItem(item);
-	}
+	
 }
