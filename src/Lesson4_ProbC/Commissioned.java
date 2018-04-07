@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Commissioned extends Employee {
+	
 	private double commission;
 	private double baseSalary;
 	private List<Order> orders;

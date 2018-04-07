@@ -1,4 +1,4 @@
-package Lesson5_Prob4;
+package Lesson5_Prob4a;
 
 import java.time.LocalDate;
 
@@ -10,11 +10,6 @@ public class CustOrderFactory {
 	
 	public static Order createOrder(Customer cus, LocalDate orderDate) {
 		
-		if(cus == null) throw new NullPointerException("Customer is null");
-		Order ord = Order.newOrder(cus,orderDate);
-		cus.addOrder(ord);
-		return ord;
+		return  Order.newOrder(cus,orderDate);
 	}
-	
-	
 }

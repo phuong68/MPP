@@ -1,4 +1,4 @@
-package Lesson5_Prob4;
+package Lesson5_Prob4a;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,14 +15,18 @@ public class Order {
 		items = new ArrayList<Item>();	
 	}
 	public static Order newOrder(Customer cust, LocalDate date) {
-		if(cust == null) throw new NullPointerException("Null customer");
+		if(cust == null) throw new NullPointerException("Customer should not be null");
+		
 		Order ord = new Order(date);
 		cust.addOrder(ord);
+		
 		return ord;
 	}
+	
 	public void addItem(String name){
 		items.add(new Item(name));
 	}
+	
 	@Override
 	public String toString() {
 		return orderDate + ": " + 

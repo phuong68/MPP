@@ -2,23 +2,14 @@ package Lesson5_Prob4;
 
 import java.time.LocalDate;
 
-
 public class Main {
+
 	public static void main(String[] args) {
 		
-		Customer cust = CustOrderFactory.createCustomer("Bob");
-		Order order = CustOrderFactory.createOrder(cust, LocalDate.now());
+		Person p = PersonBirthInfoFactory.createPerson("Jack", LocalDate.of(1960, 4, 12));
 		
-		order.addItem("Shirt");
-		order.addItem("Laptop");
-		
-		order = CustOrderFactory.createOrder(cust, LocalDate.now().plusDays(1));
-		
-		order.addItem("Pants");
-		order.addItem("Knife set");
+		PersonBirthInfoFactory.printPerson(p);
 
-		System.out.println(cust.getOrders());
 	}
-}
 
-		
+}
