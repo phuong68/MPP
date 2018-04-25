@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class FilterItems 
 {
@@ -46,12 +47,16 @@ public class FilterItems
 	
 	// Implement most generic filter function that can work well for the above code in main
 	public static <T> Collection<T> filter(Predicate<T> fn,List<T> list){
-		Collection<T> ret = new ArrayList<T>();
-		for(T t: list) {
-			if (fn.test(t))
-						ret.add(t);
-		}
-		return ret;
+//		Collection<T> ret = new ArrayList<T>();
+//		for(T t: list) {
+//			if (fn.test(t))
+//						ret.add(t);
+//		}
+//		return ret;
+		
+		return list.stream()
+			.filter(t -> fn.test(t))
+			.collect(Collectors.toList());
 		
 		
 	}

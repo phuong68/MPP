@@ -50,12 +50,16 @@ public class FilterItems
 	//This is generic method that takes lambda expression and collection as input
 	public static <T> Collection<T> operation(Function<T,T> bf,List<T> list){
 		
-		Collection<T> ret = new ArrayList<>();
+//		Collection<T> ret = new ArrayList<>();
+//		
+//		for(T t:list) {
+//			ret.add(bf.apply(t));
+//		}
+//		return ret;
 		
-		for(T t:list) {
-			ret.add(bf.apply(t));
-		}
-		return ret;
+		return list.stream()
+			.map(t->bf.apply(t))
+			.collect( Collectors.toList());
 		
 	}
 	
