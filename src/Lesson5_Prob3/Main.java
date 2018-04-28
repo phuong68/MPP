@@ -1,5 +1,8 @@
 package Lesson5_Prob3;
 
+import java.util.Arrays;
+import java.util.stream.Stream;
+
 public class Main {
 	
 	public static void main(String[] args) {
@@ -10,6 +13,8 @@ public class Main {
 			totalArea += s.computeArea();
 		}
 		
-		System.out.println("Sum of Areas = " + totalArea);
+		Stream<Shape> stream = Arrays.asList(shapes).stream();
+		
+		System.out.println( stream.map(sh -> sh.computeArea()).reduce(Double.valueOf(0),(a,b)-> a+b));
 	}
 }
