@@ -27,6 +27,11 @@ public class Order {
 		items.add(new Item(name));
 	}
 	
+
+	public List<Item> getItems(){
+		return items;
+	}
+	
 	@Override
 	public String toString() {
 		return orderDate + ": " + 
